@@ -2,22 +2,13 @@
 
 (function () {
 	
-	function menu () {
-		if($('#menuBody').val() == "") {
-			$('#menuBody').removeClass('mobilehide')
-			$('#menuBody').val('flex')
-		}else if($('#menuBody').val() == "none") {
-			$('#menuBody').removeClass('mobilehide')
-			$('#menuBody').val('flex')
-		}else if($('#menuBody').val() == "flex") {
-			$('#menuBody').addClass('mobilehide')
-			$('#menuBody').val('none')
-		}
-	}
-	
 	$('#menubtn').on('click',function () {
-		menu()
-		console.log('click')
+		if($('#menuBody').val() == "none" || $('#menuBody').val() == "") {
+			$('#menuBody').val('flex').removeClass('mobilehide')
+		}else if($('#menuBody').val() == "flex") {
+			$('#menuBody').val('none').addClass('mobilehide')
+		}
+		//console.log('click')
 	})
 	
 	console.log('script')
